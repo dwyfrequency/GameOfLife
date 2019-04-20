@@ -4,7 +4,7 @@ import Board from './Board';
 
 class App extends Component {
   onCellClick(e) {
-    console.log(e.target);
+    console.log('pre', e.target);
     if (e.target.dataset.status === 'dead') {
       e.target.className = 'alive';
       e.target.status = 'alive';
@@ -12,6 +12,7 @@ class App extends Component {
       e.target.className = 'dead';
       e.target.status = 'dead';
     }
+    console.log('post', e.target);
   }
   render() {
     return (
@@ -19,7 +20,7 @@ class App extends Component {
         <div id="container">
           <h1>Game of Life</h1>
           {/* <table id="board" /> */}
-          <Board onClick={this.onCellClick} />
+          <Board onCellClick={this.onCellClick} />
 
           <div id="control_panel">
             <button id="step_btn" className="button">

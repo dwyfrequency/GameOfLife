@@ -28,14 +28,14 @@ class GameOfLife {
   }
 }
 
-const Board = props => {
+const Board = ({ onCellClick }) => {
   const width = 25;
   const height = 20;
   const gameInstance = new GameOfLife(width, height);
 
   const gameBoard = gameInstance.board.map((innerArr, rowIdx) => {
     return (
-      <tr key={`${innerArr}-${rowIdx}`} id={`row#${rowIdx}`}>
+      <tr key={`row#${rowIdx}`} id={`row#${rowIdx}`}>
         {innerArr.map((livingStatus, colIdx) => (
           <BoardCell
             key={`${rowIdx}-${colIdx}`}
@@ -49,7 +49,7 @@ const Board = props => {
   });
 
   return (
-    <table id="board">
+    <table id="board" onClick={onCellClick}>
       <tbody>{gameBoard}</tbody>
     </table>
   );
