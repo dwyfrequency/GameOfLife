@@ -4,15 +4,13 @@ import Board from './Board';
 
 class App extends Component {
   onCellClick(e) {
-    console.log('pre', e.target);
     if (e.target.dataset.status === 'dead') {
       e.target.className = 'alive';
-      e.target.status = 'alive';
+      e.target.dataset.status = 'alive';
     } else {
       e.target.className = 'dead';
-      e.target.status = 'dead';
+      e.target.dataset.status = 'dead';
     }
-    console.log('post', e.target);
   }
   render() {
     return (
