@@ -1,3 +1,5 @@
+Refactor this using inspiration of https://codesandbox.io/s/6xm5zkwrwz
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
