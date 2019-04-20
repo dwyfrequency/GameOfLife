@@ -58,7 +58,22 @@ const App = props => {
             };
             return (
               <table style={style}>
-                <tbody> </tbody>
+                <tbody>
+                  {board.map((tableRow, rowIdx) => {
+                    return (
+                      <tr key={`rowIdx: ${rowIdx}`}>
+                        {tableRow.map((cellVal, colIdx) => (
+                          <td
+                            key={`${rowIdx}-${colIdx}`}
+                            style={{
+                              backgroundColor: cellVal ? 'blue' : 'white',
+                            }}
+                          />
+                        ))}
+                      </tr>
+                    );
+                  })}
+                </tbody>
               </table>
             );
           }}
