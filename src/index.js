@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import { AutoSizer } from 'react-virtualized';
 import * as serviceWorker from './serviceWorker';
 import GameBoard from './GameBoard';
+import Timer from './Timer';
 
 const App = props => {
   const [width, setWidth] = useState(40);
   const [height, setHeight] = useState(40);
   const [interval, setInterval] = useState(100);
   const { board, resetGame, step } = GameBoard(width, height);
-  // const { started, toggle } = useTimer(step, interval);
+  const { started, toggle } = Timer(step, interval);
+
   return (
     <div className="container">
       <div className="overlay">
@@ -41,7 +43,7 @@ const App = props => {
             onChange={e => setInterval(e.target.value)}
           />{' '}
         </pre>
-        <button className="btn-emoji" onClick={() => 'reset'} alt="Reset">
+        <button className="btn-emoji" onClick={() => resetGame()} alt="Reset">
           ⏮
         </button>
         <button className="btn-emoji" onClick={() => 'toggle'} alt="Play/Pause">

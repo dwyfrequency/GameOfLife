@@ -1,5 +1,13 @@
 Refactor this using inspiration of https://codesandbox.io/s/6xm5zkwrwz
 
+## Notes:
+
+- having some issues with AutoSizer component
+  - when I initially downloaded it i got a lot of security warning so i did npm audit (?)
+  - need to read up on hooks useState, useEffect, and useRef
+  - need to understand design pattern where they return an object of function instead of a component.
+    - weird that they still use state and other hooks in the func
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
