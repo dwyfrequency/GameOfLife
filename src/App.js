@@ -1,25 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Board from './Board';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <div id="container">
+          <h1>Game of Life</h1>
+          {/* <table id="board" /> */}
+          <Board />
+
+          <div id="control_panel">
+            <button id="step_btn" className="button">
+              Step
+            </button>
+            <button id="play_btn" className="button">
+              Play
+            </button>
+            <button id="random_btn" className="button">
+              Randomize Board
+            </button>
+            <button id="clear_btn" className="button">
+              Clear
+            </button>
+          </div>
+
+          <footer>
+            <p>
+              Built by Jackie D at{' '}
+              <a href="http://www.fullstackacademy.com/">Fullstack Academy</a>
+            </p>
+          </footer>
+        </div>
       </div>
     );
   }
