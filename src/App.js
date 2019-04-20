@@ -3,13 +3,23 @@ import './App.css';
 import Board from './Board';
 
 class App extends Component {
+  onCellClick(e) {
+    console.log(e.target);
+    if (e.target.dataset.status === 'dead') {
+      e.target.className = 'alive';
+      e.target.status = 'alive';
+    } else {
+      e.target.className = 'dead';
+      e.target.status = 'dead';
+    }
+  }
   render() {
     return (
       <div className="App">
         <div id="container">
           <h1>Game of Life</h1>
           {/* <table id="board" /> */}
-          <Board />
+          <Board onClick={this.onCellClick} />
 
           <div id="control_panel">
             <button id="step_btn" className="button">
